@@ -127,7 +127,8 @@ app.post('/users/courses/:courseId', authenticateUser, (req, res) => {
 app.get('/users/purchasedCourses', (req, res) => {
   // logic to view purchased courses
   const userIdx = USERS.findIndex(user => user.username === req.headers.username);
-  const userCourses = USERS[userIdx].courses.map(courseId => COURSES.find(course => course.courseId.toString() === courseId.toString()));
+  // const userCourses = USERS[userIdx].courses.map(courseId => COURSES.find(course => course.courseId.toString() === courseId.toString()));
+  const userCourses = COURSES.filter(course => USERS[userIdx].courses.includes(course.courseId));
   res.status(200).json({ purchasedCourses: userCourses });
 });
 
