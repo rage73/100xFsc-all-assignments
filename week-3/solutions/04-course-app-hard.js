@@ -157,3 +157,14 @@ app.get('/users/purchasedCourses', authenticateJwt, async (req, res) => {
 });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
+
+
+// mongoose.Schema 
+// mongoose.model
+// mongoose.connect
+
+// model.findOne (async)
+// findByIdAndUpdate
+// find
+// save
+
