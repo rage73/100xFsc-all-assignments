@@ -1,6 +1,7 @@
-const express = require('express');
-const { authenticateJwt, SECRET } = require("../middleware/index");
-const { Todo } = require("../db");
+import express from 'express';
+import { authenticateJwt } from '../middleware';
+import { Todo } from '../db';
+
 const router = express.Router();
 
 router.post('/todos', authenticateJwt, (req, res) => {
