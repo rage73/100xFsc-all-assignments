@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
-import TodoList from "./Components/TodoList";
+import Login from "./components/login";
+import Signup from "./components/signup";
+import TodoList from "./components/todoList";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { authState } from "./store/authState.js";
