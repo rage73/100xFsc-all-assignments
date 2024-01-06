@@ -7,10 +7,10 @@ const authenticateJwt = (req: Request, res: Response, next: NextFunction) => {
   if (authHeader) {
     const token = authHeader.split(' ')[1];
     jwt.verify(token, SECRET, (err, user) => {
-      if (err) {
+      if (err || !user || typeof (user) === "string") {
         return res.sendStatus(403);
       }
-      req.userId = user.id;
+      req.headers.userId = user.id;
       next();
     });
   } else {

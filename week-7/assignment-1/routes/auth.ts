@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('/me', authenticateJwt, async (req, res) => {
-  const user = await User.findOne({ _id: req.userId });
+  const user = await User.findOne({ _id: req.headers.userId });
   if (user) {
     res.json({ username: user.username });
   } else {
